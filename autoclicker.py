@@ -33,11 +33,14 @@ ____________________________________________________________
 """ + CY + """2. Release the 'X' key to stop clicking.
 
     """)
+    
+    # Main loop
     while True:
         if keyboard.is_pressed('x'):
-            time.sleep(0.05)
-            click()
-            break
+            while keyboard.is_pressed('x'):
+                click()
+                time.sleep(0.05)
+        time.sleep(0.01)
 
 if __name__ == "__main__":
     main()
